@@ -1,0 +1,4 @@
+regex==2022.1.18
+python-crfsuite==0.9.8
+numpy==1.22.2
+requests==2.27.1

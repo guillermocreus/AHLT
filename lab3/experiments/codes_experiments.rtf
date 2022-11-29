@@ -1,0 +1,460 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17580\viewh11300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Experiments:\
+\
+\
+1) Embedding dimension W (100), S (50) - biLSTM w/ 1 layers [200]:\
+	Devel F1 Score = 51.9%\
+	Test F1 Score = 52.1%\
+\
+Number of words = 9687\
+Number of suffixes = 4968\
+\
+According to https://developers.googleblog.com/2017/11/introducing-tensorflow-feature-columns.html, \
+Dim = n_cat**0.25\
+\
+2) Embedding dimension W (10), S (8) - biLSTM w/ 1 layers [200]:\
+	Devel F1 Score = 54.6%\
+	Test F1 Score = 53.4%\
+\
+2.1) Embedding dimension W (10), S (8) - biLSTM w/ 1 layers [100]:\
+	Devel F1 Score = 47.9%\
+	Test F1 Score = 53.1%\
+\
+\
+3) Embedding dimension W (50), S (25) - biLSTM w/ 1 layers [200]:\
+	Devel F1 Score = 50.6%\
+	Test F1 Score = 54.6%\
+\
+4) Pretrained with Glove W (50)  - biLSTM w/ 1 layers [200]:\
+	Devel F1 Score = 49.1%\
+	Test F1 Score = 50.0%\
+\
+5) Pretrained with Glove W (100) -  - biLSTM w/ 1 layers [200]:\
+	Devel F1 Score = 49.3%\
+	Test F1 Score = 52.4%\
+\
+6) Embedding dimension W (10), S (8) - biLSTM w/ 2 layers [200, 200]:\
+	Devel F1 Score = 56.2%\
+	Test F1 Score = 56.7%\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 Epoch 1/10\
+170/170 [==============================] - 416s 2s/step - loss: 0.0907 - accuracy: 0.8797 - val_loss: 0.0715 - val_accuracy: 0.8782\
+Epoch 2/10\
+170/170 [==============================] - 406s 2s/step - loss: 0.0459 - accuracy: 0.9156 - val_loss: 0.0257 - val_accuracy: 0.9415\
+Epoch 3/10\
+170/170 [==============================] - 407s 2s/step - loss: 0.0217 - accuracy: 0.9511 - val_loss: 0.0286 - val_accuracy: 0.9400\
+Epoch 4/10\
+170/170 [==============================] - 410s 2s/step - loss: 0.0166 - accuracy: 0.9624 - val_loss: 0.0263 - val_accuracy: 0.9481\
+Epoch 5/10\
+170/170 [==============================] - 407s 2s/step - loss: 0.0129 - accuracy: 0.9725 - val_loss: 0.0230 - val_accuracy: 0.9506\
+Epoch 6/10\
+170/170 [==============================] - 408s 2s/step - loss: 0.0107 - accuracy: 0.9778 - val_loss: 0.0225 - val_accuracy: 0.9567\
+Epoch 7/10\
+170/170 [==============================] - 406s 2s/step - loss: 0.0088 - accuracy: 0.9821 - val_loss: 0.0229 - val_accuracy: 0.9559\
+Epoch 8/10\
+170/170 [==============================] - 409s 2s/step - loss: 0.0073 - accuracy: 0.9854 - val_loss: 0.0227 - val_accuracy: 0.9546\
+Epoch 9/10\
+170/170 [==============================] - 405s 2s/step - loss: 0.0060 - accuracy: 0.9882 - val_loss: 0.0235 - val_accuracy: 0.9537\
+Epoch 10/10\
+170/170 [==============================] - 408s 2s/step - loss: 0.0049 - accuracy: 0.9905 - val_loss: 0.0211 - val_accuracy: 0.9602\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+7) Embedding dimension W (10), S (8) - biLSTM w/ 2 layers [200, 50]:\
+	Devel F1 Score = 40.8%\
+	Test F1 Score = 45.8%\
+\
+\
+\
+8) Embedding dimension Glove W (200), S (8) - biLSTM w/ 2 layers [200, 200]:\
+	Devel F1 Score = 59.4%\
+	Test F1 Score = 58.0%\
+\
+Epoch 1/10\
+170/170 [==============================] - 398s 2s/step - loss: 0.0611 - accuracy: 0.8955 - val_loss: 0.0290 - val_accuracy: 0.9364\
+Epoch 2/10\
+170/170 [==============================] - 389s 2s/step - loss: 0.0192 - accuracy: 0.9605 - val_loss: 0.0222 - val_accuracy: 0.9578\
+Epoch 3/10\
+170/170 [==============================] - 383s 2s/step - loss: 0.0099 - accuracy: 0.9800 - val_loss: 0.0193 - val_accuracy: 0.9645\
+Epoch 4/10\
+170/170 [==============================] - 382s 2s/step - loss: 0.0055 - accuracy: 0.9892 - val_loss: 0.0224 - val_accuracy: 0.9644\
+Epoch 5/10\
+170/170 [==============================] - 378s 2s/step - loss: 0.0031 - accuracy: 0.9939 - val_loss: 0.0236 - val_accuracy: 0.9666\
+Epoch 6/10\
+170/170 [==============================] - 379s 2s/step - loss: 0.0023 - accuracy: 0.9956 - val_loss: 0.0235 - val_accuracy: 0.9677\
+Epoch 7/10\
+170/170 [==============================] - 380s 2s/step - loss: 0.0014 - accuracy: 0.9974 - val_loss: 0.0280 - val_accuracy: 0.9649\
+Epoch 8/10\
+170/170 [==============================] - 381s 2s/step - loss: 0.0010 - accuracy: 0.9982 - val_loss: 0.0251 - val_accuracy: 0.9686\
+Epoch 9/10\
+170/170 [==============================] - 384s 2s/step - loss: 9.2088e-04 - accuracy: 0.9982 - val_loss: 0.0265 - val_accuracy: 0.9679\
+Epoch 10/10\
+170/170 [==============================] - 383s 2s/step - loss: 6.3906e-04 - accuracy: 0.9988 - val_loss: 0.0254 - val_accuracy: 0.9697\
+\
+\
+9) Embedding dimension Glove W (200), S (8) - biLSTM w/ 2 layers [200, 200] - external knowledge:\
+	Devel F1 Score = 61.7%\
+	Test F1 Score = 58.1%\
+\
+Epoch 1/10\
+170/170 [==============================] - 412s 2s/step - loss: 0.0572 - accuracy: 0.9041 - val_loss: 0.0287 - val_accuracy: 0.9423\
+Epoch 2/10\
+170/170 [==============================] - 397s 2s/step - loss: 0.0189 - accuracy: 0.9616 - val_loss: 0.0202 - val_accuracy: 0.9600\
+Epoch 3/10\
+170/170 [==============================] - 394s 2s/step - loss: 0.0100 - accuracy: 0.9798 - val_loss: 0.0163 - val_accuracy: 0.9674\
+Epoch 4/10\
+170/170 [==============================] - 401s 2s/step - loss: 0.0053 - accuracy: 0.9897 - val_loss: 0.0179 - val_accuracy: 0.9679\
+Epoch 5/10\
+170/170 [==============================] - 400s 2s/step - loss: 0.0032 - accuracy: 0.9936 - val_loss: 0.0178 - val_accuracy: 0.9693\
+Epoch 6/10\
+170/170 [==============================] - 399s 2s/step - loss: 0.0022 - accuracy: 0.9958 - val_loss: 0.0176 - val_accuracy: 0.9716\
+Epoch 7/10\
+170/170 [==============================] - 402s 2s/step - loss: 0.0014 - accuracy: 0.9972 - val_loss: 0.0216 - val_accuracy: 0.9676\
+Epoch 8/10\
+170/170 [==============================] - 400s 2s/step - loss: 0.0010 - accuracy: 0.9981 - val_loss: 0.0240 - val_accuracy: 0.9678\
+Epoch 9/10\
+170/170 [==============================] - 401s 2s/step - loss: 7.2122e-04 - accuracy: 0.9988 - val_loss: 0.0199 - val_accuracy: 0.9708\
+Epoch 10/10\
+170/170 [==============================] - 397s 2s/step - loss: 6.3237e-04 - accuracy: 0.9988 - val_loss: 0.0193 - val_accuracy: 0.9725\
+\
+10) Embedding dimension Glove W (200), S (50) - biLSTM w/ 2 layers [200, 200] - external knowledge:\
+	Devel F1 Score = 57.5%\
+	Test F1 Score = 58.2%\
+\
+11) Embedding dimension Glove W (200), S (100) - biLSTM w/ 2 layers [200, 200] - external knowledge:\
+	Devel F1 Score = 61.1%\
+	Test F1 Score = 57.0%\
+\
+_______\
+\
+We keep Embedding dimension Glove W (200), S (8) - biLSTM w/ 2 layers [200, 200] - external knowledge\
+\
+We add handcrafted features, training goes bad, overfitting, so early stopping policy and dropout 0.2 is added. Apart from that, Dense [100, 32] is added before softmax layer\
+\
+\
+12)\
+	Devel F1 Score = 62.8%\
+	Test F1 Score = 60.3%\
+\
+Epoch 1/10\
+170/170 [==============================] - 407s 2s/step - loss: 0.0601 - accuracy: 0.8996 - val_loss: 0.0317 - val_accuracy: 0.9330\
+Epoch 2/10\
+170/170 [==============================] - 396s 2s/step - loss: 0.0174 - accuracy: 0.9648 - val_loss: 0.0245 - val_accuracy: 0.9561\
+Epoch 3/10\
+170/170 [==============================] - 397s 2s/step - loss: 0.0085 - accuracy: 0.9833 - val_loss: 0.0248 - val_accuracy: 0.9628\
+Epoch 4/10\
+170/170 [==============================] - 394s 2s/step - loss: 0.0049 - accuracy: 0.9904 - val_loss: 0.0204 - val_accuracy: 0.9690\
+Epoch 5/10\
+170/170 [==============================] - 391s 2s/step - loss: 0.0031 - accuracy: 0.9941 - val_loss: 0.0256 - val_accuracy: 0.9663\
+Epoch 6/10\
+170/170 [==============================] - 391s 2s/step - loss: 0.0020 - accuracy: 0.9959 - val_loss: 0.0199 - val_accuracy: 0.9715\
+Epoch 7/10\
+170/170 [==============================] - 391s 2s/step - loss: 0.0015 - accuracy: 0.9970 - val_loss: 0.0218 - val_accuracy: 0.9712\
+Epoch 8/10\
+170/170 [==============================] - 393s 2s/step - loss: 0.0011 - accuracy: 0.9978 - val_loss: 0.0245 - val_accuracy: 0.9692\
+\
+_______\
+\
+We change Dense[400, 128, 32]\
+\
+13)\
+\
+	Devel F1 Score = 60.6%\
+	Test F1 Score = 59.1%\
+\
+_______\
+\
+\
+We keep Dense[400, 128, 32] but suffix dimension 50\
+\
+14)\
+\
+	Devel F1 Score = 63.6%\
+	Test F1 Score = 62.3%\
+\
+Epoch 1/10\
+170/170 [==============================] - 417s 2s/step - loss: 0.0639 - accuracy: 0.8951 - val_loss: 0.0250 - val_accuracy: 0.9420\
+Epoch 2/10\
+170/170 [==============================] - 401s 2s/step - loss: 0.0199 - accuracy: 0.9598 - val_loss: 0.0164 - val_accuracy: 0.9676\
+Epoch 3/10\
+170/170 [==============================] - 404s 2s/step - loss: 0.0113 - accuracy: 0.9774 - val_loss: 0.0163 - val_accuracy: 0.9704\
+Epoch 4/10\
+170/170 [==============================] - 405s 2s/step - loss: 0.0075 - accuracy: 0.9849 - val_loss: 0.0166 - val_accuracy: 0.9711\
+Epoch 5/10\
+170/170 [==============================] - 401s 2s/step - loss: 0.0051 - accuracy: 0.9901 - val_loss: 0.0174 - val_accuracy: 0.9721\
+Epoch 6/10\
+170/170 [==============================] - 400s 2s/step - loss: 0.0040 - accuracy: 0.9926 - val_loss: 0.0164 - val_accuracy: 0.9731\
+Epoch 7/10\
+170/170 [==============================] - 399s 2s/step - loss: 0.0031 - accuracy: 0.9942 - val_loss: 0.0188 - val_accuracy: 0.9722\
+\
+_______\
+\
+We change Dense[400, 400] and suffix dimension =  8\
+\
+15)\
+\
+	Devel F1 Score = %\
+	Test F1 Score = %\
+\
+_______\
+\
+We change Dense[400, 400] and suffix dimension = 50\
+\
+16)\
+\
+	Devel F1 Score = 64.5%\
+	Test F1 Score = 62.1%\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 Epoch 1/10\
+170/170 [==============================] - 407s 2s/step - loss: 0.0608 - accuracy: 0.8968 - val_loss: 0.0277 - val_accuracy: 0.9429\
+Epoch 2/10\
+170/170 [==============================] - 398s 2s/step - loss: 0.0175 - accuracy: 0.9642 - val_loss: 0.0186 - val_accuracy: 0.9671\
+Epoch 3/10\
+170/170 [==============================] - 400s 2s/step - loss: 0.0099 - accuracy: 0.9797 - val_loss: 0.0151 - val_accuracy: 0.9721\
+Epoch 4/10\
+170/170 [==============================] - 394s 2s/step - loss: 0.0062 - accuracy: 0.9875 - val_loss: 0.0195 - val_accuracy: 0.9655\
+Epoch 5/10\
+170/170 [==============================] - 387s 2s/step - loss: 0.0041 - accuracy: 0.9919 - val_loss: 0.0186 - val_accuracy: 0.9703\
+Epoch 6/10\
+170/170 [==============================] - 386s 2s/step - loss: 0.0032 - accuracy: 0.9936 - val_loss: 0.0211 - val_accuracy: 0.9700\
+Epoch 7/10\
+170/170 [==============================] - 383s 2s/step - loss: 0.0024 - accuracy: 0.9952 - val_loss: 0.0210 - val_accuracy: 0.9718\
+\
+\
+____\
+17) [P, S] = [8, 8]\
+\
+18) [P, S] = [50, 50]\
+\
+____\
+19) prefix and suffix length = 4\
+\
+	Devel F1 Score = 64.4%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 59.9%\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+20) prefix and suffix length = 3\
+\
+	Devel F1 Score = 61.9%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.6%\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+____\
+We keep prefix and suffix length = 5 and we include more features <\'97 overfitting!\
+21) pos tags and lower case\
+\
+	Devel F1 Score = 67.6%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 62.6%\
+\
+Epoch 1/10\
+170/170 [==============================] - 452s 3s/step - loss: 0.0562 - accuracy: 0.9022 - val_loss: 0.0215 - val_accuracy: 0.9502\
+Epoch 2/10\
+170/170 [==============================] - 437s 3s/step - loss: 0.0144 - accuracy: 0.9703 - val_loss: 0.0143 - val_accuracy: 0.9721\
+Epoch 3/10\
+170/170 [==============================] - 439s 3s/step - loss: 0.0070 - accuracy: 0.9862 - val_loss: 0.0142 - val_accuracy: 0.9751\
+Epoch 4/10\
+170/170 [==============================] - 441s 3s/step - loss: 0.0041 - accuracy: 0.9918 - val_loss: 0.0154 - val_accuracy: 0.9739\
+Epoch 5/10\
+170/170 [==============================] - 442s 3s/step - loss: 0.0028 - accuracy: 0.9943 - val_loss: 0.0168 - val_accuracy: 0.9746\
+Epoch 6/10\
+170/170 [==============================] - 441s 3s/step - loss: 0.0021 - accuracy: 0.9958 - val_loss: 0.0173 - val_accuracy: 0.9734\
+Epoch 7/10\
+170/170 [==============================] - 443s 3s/step - loss: 0.0016 - accuracy: 0.9967 - val_loss: 0.0182 - val_accuracy: 0.9748\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+22) Same as exp21 but we increase LSTM [400, 400] and Dense[800, 400] <\'97 overfitting!\
+\
+	Devel F1 Score = 65.6%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.2%\
+\
+23) We keep prefix and suffix length at 5 and pos tags and lower case\
+Dropout to 0.4, Architecture back to normal: LSTM[200, 200], Dense [400, 400]\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 65.3%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.4%\
+\
+24) We keep prefix and suffix length at 5 and pos tags and lower case\
+We reduce dimensionality to [150, 150] and Dense[300, 300]\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 62.7%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.9%\
+\
+25) We keep prefix and suffix length at 5 and pos tags and lower case\
+We reduce dimensionality to [150, 150] and Dense[300, 300] and Dropout to 0.4\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 67.7%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 62.4%\
+\
+26) I keep exp 25 and max_len = 120\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 65.7%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.7%\
+\
+27) I keep exp 25 and max_len = 180\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 65.2%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 62.3%\
+\
+________________\
+28) I keep exp 25, 3 stacked LSTM, patience=2 and max_len = 80\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 57.6%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 57.3%\
+\
+29) I keep exp 25, 1 stacked LSTM, patience=2 and max_len = 80\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 63.1%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.6%\
+\
+30) I keep exp 25, 2 stacked LSTM, patience=2 and max_len = 80\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 62.3%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.9%\
+\
+31) I keep exp 25, 2 stacked LSTM, patience=3 and max_len = 120\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 65.9%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.7%\
+\
+_____________________\
+\
+32) I start from exp25, Max len = 150, patience = 3, and LSTM[128, 128], Dense[128, 64], dropout = 0.2\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 63.5%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.5%\
+\
+33) I start from exp25, Max len = 150, patience = 3, and LSTM[128, 128], Dense[128, 64], dropout = 0.2 (JUST FOR 5 epochs to avoid overfitting), batch size = 64 (from 32)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 59.8%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 57.3%\
+\
+34) I start from exp25, Max len = 150, patience = 3, and LSTM[400, 400], Dense[400, 100], dropout = 0.2. batch size = 128 (from 32)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 66.4%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.2%\
+\
+35) I start from exp25, Max len = 150, patience = 3, and LSTM[150, 150], Dense[100, 20], dropout = 0.2. batch size = 64\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 62.8%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.5%\
+\
+36) Same as exp35 LSTM[200, 200] and Dense[150, 20] bs 64\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 63.1%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.4%\
+\
+37) exp36 with bs 16\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 67.8%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.4%\
+\
+38) LSTM[200, 200], Dense [200, 50], dropout 0.3 bs 16\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 66.6%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.0%\
+\
+39) Same as exp38 but bs 32 and we remove dropout of handcrafted features\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 67.6%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 63.3%\
+\
+39_2)\
+Run 1\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 61.0%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.1%\
+Run 2\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 62.9%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 61.2%\
+Run 3\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 68.1%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.7%\
+Run 4\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 67.3%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = 60.7%\
+\
+40) Downsized version\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = 62.4%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = %\
+\
+41) Missing experiment (I skipped this index)\
+\
+42) Same as exp38 but bs 32 and we remove dropout of handcrafted features BiLSTM [128, 128] and Dense[64, 32]\
+Run 1\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = %\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = %\
+Run 2\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = %\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = %\
+Run 3\
+\pard\pardeftab720\partightenfactor0
+\cf0 	Devel F1 Score = %\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 	Test F1 Score = %\
+\
+Not working\
+______\
+\
+\
+}

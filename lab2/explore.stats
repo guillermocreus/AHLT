@@ -1,0 +1,228 @@
+THIS IS MINE
+concomitantly
+diuretic
+do
+not
+absorption
+.
+-------------
+sentence: Rifampin, an inducer of drug metabolism, decreased the concentrations of losartan and its active metabolite.
+entities: Rifampin / losartan
+ddi: mechanism
+   ROOT(decrease_VBD)
+      nsubj(Rifampin_NNP)
+         punct(,_,)
+         appos(inducer_NN)
+            det(a_DT)
+            nmod(metabolism_NN)
+               case(of_IN)
+               compound(drug_NN)
+      punct(,_,)
+      obj(concentration_NNS)
+         det(the_DT)
+         nmod(losartan_NN)
+            case(of_IN)
+            conj(metabolite_NN)
+               cc(and_CC)
+               nmod:poss(its_PRP$)
+               amod(active_JJ)
+      punct(._.)
+>>> match: decrease_VB
+-------------
+sentence: Ketoconazole did not affect the conversion of losartan to the active metabolite after intravenous administration of losartan, and erythromycin had no clinically significant effect after oral administration.
+entities: Ketoconazole / losartan
+ddi: null
+   ROOT(affect_VB)
+      nsubj(Ketoconazole_NNP)
+      aux(do_VBD)
+      advmod(not_RB)
+      obj(conversion_NN)
+         det(the_DT)
+         nmod(losartan_NN)
+            case(of_IN)
+         nmod(metabolite_NN)
+            case(to_IN)
+            det(the_DT)
+            amod(active_JJ)
+      obl(administration_NN)
+         case(after_IN)
+         amod(intravenous_JJ)
+         nmod(losartan_NN)
+            case(of_IN)
+      punct(,_,)
+      conj(have_VBD)
+         cc(and_CC)
+         nsubj(erythromycin_NN)
+         obj(effect_NN)
+            det(no_DT)
+            amod(significant_JJ)
+               advmod(clinically_RB)
+         obl(administration_NN)
+            case(after_IN)
+            amod(oral_JJ)
+      punct(._.)
+>>> match: affect_VB
+THIS IS MINE
+Ketoconazole
+do
+not
+conversion
+administration
+,
+have
+.
+THIS IS MINE
+Ketoconazole
+do
+not
+conversion
+administration
+,
+have
+.
+THIS IS MINE
+Ketoconazole
+do
+not
+conversion
+administration
+,
+have
+.
+THIS IS MINE
+Ketoconazole
+do
+not
+conversion
+administration
+,
+have
+.
+THIS IS MINE
+Ketoconazole
+do
+not
+conversion
+administration
+,
+have
+.
+THIS IS MINE
+Fluconazole
+concentration
+increase
+.
+THIS IS MINE
+agent
+,
+effect
+may
+be
+indomethacin
+THIS IS MINE
+agent
+,
+effect
+may
+be
+indomethacin
+THIS IS MINE
+agent
+,
+effect
+may
+be
+indomethacin
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+intensity
+be
+systematically
+patient
+.
+THIS IS MINE
+barbiturate
+should
+not
+be
+patient
+.
+THIS IS MINE
+barbiturate
+should
+not
+be
+patient
+.
+THIS IS MINE
+hydrate
+pharmacologically
+agent
+,
+significant
+.
+THIS IS MINE
+hydrate
+pharmacologically
+agent
+,
+significant
+.
+THIS IS MINE
+that
+hydrate
+may
+be
+safely
+caution
+monitoring
+therapy
+THIS IS MINE
+that
+hydrate
+may
+be
+safely
+caution
+monitoring
+therapy
+----------------------
+2 matches found
+----------------------
+P(mechanism|ANY) = 1/2 = 0.5
+P(effect|ANY) = 0/2 = 0.0
+P(int|ANY) = 0/2 = 0.0
+P(advise|ANY) = 0/2 = 0.0
+P(null|ANY) = 1/2 = 0.5
+----------------------
+P(mechanism|decrease_VB) = 1/1 = 1.0
+P(null|affect_VB) = 1/1 = 1.0
